@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<medios_de_transportes>
+    <bicicleta_velocidad>100km/h
+    </bicicleta_velocidad> 
+
+    <patinete_velocidad_maxima> 50km/h
+    </patinete_velocidad_maxima>
+
+    <vehiculo>
+        <coche_velocidad>120km/h</coche_velocidad>
+        <camión_velocidad_maxima>80km/h</camión_velocidad_maxima>
+    </vehiculo>
+</medios_de_transportes>
