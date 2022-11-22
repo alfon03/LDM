@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE recetas [
+    <!ELEMENT recetas (receta)>
+    <!ELEMENT receta  (nombre, ingredientes, elaboracion)>
+    <!ELEMENT nombre (#PCDATA)>
+    <!ATTLIST receta raciones CDATA #REQUIRED>
+    <!ATTLIST receta dificultad (media | baja | alta) "media">
+    <!ELEMENT ingredientes (ingrediente+)>
+    <!ELEMENT ingrediente (nombre,cantidad, unidad)>
+    <!ATTLIST ingrediente cantidad CDATA #IMPLIED>
+    <!ATTLIST ingrediente unidad CDATA #IMPLIED>
+]>
+<receta raciones="8">
+    <nombre>bocadillo de choped</nombre>
+    <ingredientes>
+        <ingrediente cantidad="156" unidad="gr">choped</ingrediente>
+        <ingrediente cantidad="456" unidad="gr">andaluza(pan)</ingrediente>
+    </ingredientes>
+    <elaboracion>Se coge un utensilio de cocina para cortar el pan, en este caso un cuchillo, 
+    sin cortarnos claramente e introducimos las rodajas de choped</elaboracion>
+</receta>
+
+

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE facturas[ 
+<!ELEMENT facturas (#PCDATA)>
+<!ELEMENT factura (datos_cliente, datos_factura)>
+<!ELEMENT datos_cliente (nombre, apellido, apellido, dni, tfno)>
+<!ATTLIST datos_cliente ident ID #REQUIRED>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT apellido (#PCDATA)>
+<!ELEMENT dni (#PCDATA)>
+<!ELEMENT tfno (#PCDATA)>
+<!ELEMENT datos_factura (resguardo, (alquileres | compras | (alquileres, compras)))>
+<!ELEMENT resguardo (forma_pago, importe_total)>
+<!ELEMENT importe_total (#PCDATA)>
+<!ELEMENT forma_pago (#PCDATA)>
+<!ELEMENT alquileres (fecha, peliculas)>
+<!ELEMENT fecha (#PCDATA)>
+<!ELEMENT peliculas (pelicula+)>
+<!ELEMENT pelicula (titulo, genero, duracion, actores)>
+<!ATTLIST pelicula id_pelicula ID #REQUIRED valoracion CDATA "" caratula ENTITY #IMPLIED> 
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT genero (#PCDATA)>
+<!ELEMENT duracion (#PCDATA)>
+<!ELEMENT actores (actor)>
+<!ELEMENT actor (nombre, apellido)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT apellido (#PCDATA)>
+<!NOTATION jpg SYSTEM "aplicaciones/visordeimagenes.exe">
+<!ENTITY imagen_p0360 SYSTEM "caratulas/c0360.jpg" NDATA jpg>  
+<!ENTITY imagen_p0437 SYSTEM "caratulas/c0437.jpg" NDATA jpg>
+<!ENTITY imagen_p1201 SYSTEM "caratulas/c1201.jpg" NDATA jpg>
+<!ELEMENT compras (dvds | cintas | (dvds, cintas))>
+<!ELEMENT dvds (dvd+)>
+<!ELEMENT dvd (extras?, titulo, fecha_salida_mercado)>
+<!ELEMENT extras EMPTY>
+<!ELEMENT fecha_salida_mercado (#PCDATA)>
+<!ELEMENT cintas (cinta+)>
+<!ELEMENT cinta (titulo, formato, rebobinado?)>
+<!ELEMENT rebobinado EMPTY>
+<!ELEMENT formato (#PCDATA)>
+]>
+
+<facturas>
+   <factura>
+      <datos_cliente ident="04">
+     <nombre>Roberto</nombre>
+ <apellido>Moreno</apellido>
+ <apellido>Lopera</apellido>
+ <dni>5893258L</dni>
+ <tfno>53757356</tfno>
+  </datos_cliente>
+  
+  <datos_factura>
+     <resguardo>
+    <forma_pago>efectivo</forma_pago>
+ <importe_total>40</importe_total>
+ </resguardo>
+ <alquileres>
+    <fecha>11/06/2010</fecha>
+ <peliculas>
+   <pelicula id_pelicula="p320" caratula="foto_c0360">
+      <titulo>Malditos vecinos 2</titulo>
+  <genero>Comedia</genero>
+  <duracion>129min</duracion>
+  <actores>
+     <actor>
+    <nombre>Paco</nombre>
+            <apellido>Merlon</apellido>
+            <apellido></apellido>
+ </actor>  
+     <actor>
+  <nombre>Guillermo</nombre>
+            <apellido>Sanchez</apellido>
+             <apellido></apellido>
+ </actor>  
+     <actor>
+  <nombre>Santiago</nombre>
+            <apellido>Segura</apellido>
+            <apellido></apellido> 
+ </actor>  
+  </actores>
+    </pelicula>
+ </peliculas>
+ </alquileres>
+ <compras>
+    <dvds>
+   <dvd>
+      <extras/>
+  <titulo>Torrente</titulo>
+  <fecha_salida_mercado>2009</fecha_salida_mercado>
+   </dvd>
+ </dvds>
+ <cintas>
+   <cinta>
+      <titulo>Prederator</titulo>
+  <formato>VHS</formato>
+   </cinta>
+ </cintas>
+ </compras>
+  </datos_factura>
+   </factura>
+</facturas>
